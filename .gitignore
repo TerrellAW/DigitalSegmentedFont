@@ -1,0 +1,6 @@
+# Build products
+[Bb]in/
+[Bb]uild/
+
+# Swap files
+*.swp
