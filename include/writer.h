@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 // Font Header
-#include <font.h>
+#include "font.h"
 
 // Main export function
 int write_ttf(Font* font, const char* filepath);

@@ -3,7 +3,7 @@
 #define FONT_H
 
 // Glyph Header
-#include <glyph.h>
+#include "glyph.h"
 
 typedef struct {
 	char* name; // Font name
