@@ -34,7 +34,8 @@ typedef struct {
 
 // Glyph API
 Glyph glyph_create(uint32_t codepoint); // Allocate and initialize glyph
-int glyph_add_segment(Glyph* glyph, int x, int y, int size); // Add square segement to glyph
+int glyph_add_segment(Glyph* glyph, int x, int y, int size); // Add square segment to glyph
+int compute_advance(Glyph* glyph); // Compute space between glyphs
 void glyph_free(Glyph* glyph); // Release memory used to create glyph
 
 #endif // Closes GLYPH_H include guard
