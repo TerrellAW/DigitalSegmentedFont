@@ -2,6 +2,10 @@
 #ifndef FONT_H
 #define FONT_H
 
+// Standard Library
+#include <stddef.h>
+#include <stdio.h>
+
 // Glyph Header
 #include "glyph.h"
 
@@ -12,15 +16,13 @@ typedef struct {
 	int ascent;
 	int descent;
 
-	int units_per_em; // Size of grid
-	Glyph** glyphs; // Array of pointers to Glyph
-	int glyph_count; // Amount of glyphs in font
+	int em_size; // Size of grid
+	Glyph* glyphs; // Array of Glyphs
+	size_t glyph_count; // Amount of glyphs in font
 } Font;
 
 // Font API
-Font font_create(const char* name); // Allocate and initialize new font
-void font_add_glyph(Font font, Glyph* glyph); // Add glyph to font
-void font_set_metrics(Font font, int ascent, int descent, int units_per_em); // Set font size and layout
+Font font_create(Glyph* glyphs, size_t count); // Initialize and generate font
 void font_free(Font font); // Release memory used to create Font
 
 #endif // Closes FONT_H include guard
