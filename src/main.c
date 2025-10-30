@@ -5,10 +5,10 @@
 #include <string.h>
 
 // Project Headers
-#include "font.h"
-#include "glyph.h"
-#include "writer.h"
-#include "utils.h"
+#include "../include/font.h"
+#include "../include/glyph.h"
+#include "../include/writer.h"
+#include "../include/utils.h"
 
 int main() {
 	// TODO: Call and use functions from headers
