@@ -2,8 +2,10 @@
 #ifndef GLYPH_H
 #define GLYPH_H
 
-// Standard Library
+// Standard Libraries
+#include <stddef.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 // Define Segment struct
 typedef struct {
@@ -27,11 +29,11 @@ typedef struct {
 	Segment* segments;
 
 	// Amount of square segments
-	int segment_count;
+	size_t segment_count;
 } Glyph;
 
 // Glyph API
-Glyph* glyph_create(uint32_t codepoint); // Allocate and initialize glyph
+Glyph glyph_create(uint32_t codepoint); // Allocate and initialize glyph
 void glyph_add_segment(Glyph* glyph, int x, int y, int size); // Add square segement to glyph
 void glyph_free(Glyph* glyph); // Release memory used to create glyph
 
