@@ -7,7 +7,7 @@
 
 // Memory management helper functions
 void* safe_malloc(size_t size);
-void* safe_reallov(void* ptr, size_t size);
+void* safe_realloc(void* ptr, size_t size);
 
 // TODO: Math utilities
 
