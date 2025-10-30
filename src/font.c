@@ -17,19 +17,19 @@ Font font_create(Glyph* glyphs, size_t count) {
 }
 
 int compute_ascent(Glyph* glyphs, size_t count) {
-	int yMax = 0; // Temp
+	int y_max = 0; // Temp
 	
 	// TODO: Loop through glyphs and find highest vertical coord
 	
-	return yMax;
+	return y_max;
 }
 
 int compute_descent(Glyph* glyphs, size_t count) {
-	int yMin = 0; // Temp
+	int y_min = 0; // Temp
 	
 	// TODO: Loop through glyphs and find the lowest vertical coord
 	
-	return yMin;
+	return y_min;
 }
 
 void font_free(Font font) {
