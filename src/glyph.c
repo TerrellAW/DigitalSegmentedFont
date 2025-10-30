@@ -43,7 +43,7 @@ int glyph_add_segment(Glyph* glyph, int x, int y, int size) {
 		glyph->segment_count++; // Increment count via pointer
 		return 0; // Success
 	} else {
-		fprintf(stderr, "Invalid glyph or size in glyph_add_segment\n"); // Print to error output stream
+		fprintf(stderr, "glyph_add_segment: failed due to glyph or size: %d\n", size); // Print to error output stream
 		return -1; // Failure
 	}
 }
