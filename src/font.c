@@ -5,8 +5,6 @@
 int compute_ascent(Glyph* glyphs, size_t count);
 int compute_descent(Glyph* glyphs, size_t count);
 
-// Function implementations
-
 Font font_create(Glyph* glyphs, size_t count) {
 	Font font;
 	font.glyphs = glyphs;
