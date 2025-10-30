@@ -18,9 +18,9 @@ typedef struct {
 } Font;
 
 // Font API
-Font* font_create(const char* name); // Allocate and initialize new font
-void font_add_glyph(Font* font, Glyph* glyph); // Add glyph to font
-void font_set_metrics(Font* font, int ascent, int descent, int units_per_em); // Set font size and layout
-void font_free(Font* font); // Release memory used to create Font
+Font font_create(const char* name); // Allocate and initialize new font
+void font_add_glyph(Font font, Glyph* glyph); // Add glyph to font
+void font_set_metrics(Font font, int ascent, int descent, int units_per_em); // Set font size and layout
+void font_free(Font font); // Release memory used to create Font
 
 #endif // Closes FONT_H include guard
