@@ -17,12 +17,15 @@ typedef struct {
 	int descent;
 
 	int em_size; // Size of grid
-	Glyph* glyphs; // Array of Glyphs
+	Glyph** glyphs; // Array of Glyphs
 	size_t glyph_count; // Amount of glyphs in font
 } Font;
 
 // Font API
-Font font_create(Glyph* glyphs, size_t count); // Initialize and generate font
-void font_free(Font font); // Release memory used to create Font
+Font font_create(); // Initialize empty font
+int font_add_glyphs(Font* font, Glyph* glyph); // Add glyph to font
+int compute_ascent(Glyph** glyphs, size_t count); // Compute max height of glyphs
+int compute_descent(Glyph** glyphs, size_t count); // Compute max depth of glyphs
+void font_free(Font* font); // Release memory used to create Font
 
 #endif // Closes FONT_H include guard
