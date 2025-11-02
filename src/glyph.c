@@ -35,7 +35,7 @@ int glyph_add_segment(Glyph* glyph, int x, int y, int size) {
 int compute_advance(Glyph* glyph) {
 	if (!glyph) return -1;
 	int x_max = 0; // Initialize empty variable for right-most x coordinate
-	for (int i = 0; i < glyph->segment_count; i++) { // Iterate through segments of glyph
+	for (size_t i = 0; i < glyph->segment_count; i++) { // Iterate through segments of glyph
 		int right_edge = glyph->segments[i].x + glyph->segments[i].size; // Find right edge of segment
 		if (right_edge > x_max) { // Compare right edge of segment to highest x coord
 			x_max = right_edge; // Set highest x coord to higher value
