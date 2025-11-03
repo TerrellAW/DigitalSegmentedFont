@@ -66,6 +66,19 @@ Glyph glyph_create(uint32_t codepoint);
 int glyph_add_segment(Glyph* glyph, int x, int y, int size); 
 
 /**
+ * @brief Adds a 3x3 segment to the glyph at the specified grid position.
+ * 
+ * Automatically converts grid coordinates to pixel coordinates with 1-pixel gaps.
+ * Each grid position is 4 units apart (3-unit segment + 1-unit gap).
+ * 
+ * @param glyph Pointer to the glyph to modify.
+ * @param grid_x Grid column position. Converted to pixel_x.
+ * @param grid_y Grid row position. Converted to pixel_y.
+ * @return 0 on success, -1 if the glyph is NULL or the segment addition fails.
+ */
+int glyph_add_block(Glyph* glyph, int grid_x, int grid_y);
+
+/**
  * @brief Computes the width between glyphs based on the glyph's segments.
  *
  * Calculates the right-most edge of all segments and returns the highest value with a padding of 1 pixel.

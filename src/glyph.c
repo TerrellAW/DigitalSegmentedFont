@@ -31,6 +31,18 @@ int glyph_add_segment(Glyph* glyph, int x, int y, int size) {
 	}
 }
 
+// Add segment at grid position
+int glyph_add_block(Glyph* glyph, int grid_x, int grid_y) {
+	const int SEGMENT_SIZE = 3; // Size of squares
+	const int GAP = 1; // Size of space between squares
+	const int GRID_STEP = SEGMENT_SIZE + GAP; // Actual size (4)
+
+	int pixel_x = grid_x * GRID_STEP; // Measure horizontal pixels
+	int pixel_y = grid_y * GRID_STEP; // Measure vertical pixels
+
+	return glyph_add_segment(glyph, pixel_x, pixel_y, SEGMENT_SIZE); // Create the segment
+}
+
 // Compute space between glyphs
 int compute_advance(Glyph* glyph) {
 	if (!glyph) return -1;
