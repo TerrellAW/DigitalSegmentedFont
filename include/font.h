@@ -42,6 +42,22 @@ typedef struct {
 Font font_create(); 
 
 /**
+ * @brief Creates a dynamically allocated array of Glyph structs for a fixed Unicode range.
+ *
+ * Initializes one Glyph for each Unicode codepoint in the printable ASCII range (0x20 to 0x7E),
+ * using glyph_create(). The resulting array contains 95 glyphs, each with its codepoint set.
+ *
+ * If the caller provides a non-NULL pointer to out_count, the total number of glyphs created
+ * will be written to that location.
+ *
+ * @param out_count Optional pointer to a size_t variable to receive the number of glyphs created.
+ * @return Pointer to a dynamically allocated array of Glyph structs, or NULL on failure.
+ *
+ * @note The caller is responsible for freeing the returned array using font_free().
+ */
+Glyph* glyphs_create(size_t* out_count);
+
+/**
  * @brief Adds an array of glyphs to the font.
  *
  * Replaces the font's glyph array with the provided one and updates
