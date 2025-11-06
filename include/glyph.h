@@ -97,4 +97,9 @@ int compute_advance(Glyph* glyph);
  */
 void glyph_free(Glyph* glyph); 
 
+/**
+ * @brief Prints output to the terminal for debugging.
+ */
+void glyph_debug_print(Glyph* glyph);
+
 #endif // Closes GLYPH_H include guard

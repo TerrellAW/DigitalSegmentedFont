@@ -63,3 +63,38 @@ void glyph_free(Glyph* glyph) {
 	glyph->segments = NULL; // Reset pointer
 	glyph->segment_count = 0; // Reset count via pointer
 }
+
+// Debug output
+void glyph_debug_print(Glyph* glyph) {
+	if (!glyph) return;
+
+	// Find bounds
+    int max_x = 0, max_y = 0;
+    for (size_t i = 0; i < glyph->segment_count; i++) {
+        int right = glyph->segments[i].x + glyph->segments[i].size;
+        int bottom = glyph->segments[i].y + glyph->segments[i].size;
+        if (right > max_x) max_x = right;
+        if (bottom > max_y) max_y = bottom;
+    }
+    
+    printf("Glyph '%c' (U+%04X):\n", (char)glyph->codepoint, glyph->codepoint);
+    
+    // Print grid
+    for (int y = 0; y < max_y; y++) {
+        for (int x = 0; x < max_x; x++) {
+            bool filled = false;
+            // Check if this pixel is inside any segment
+            for (size_t i = 0; i < glyph->segment_count; i++) {
+                Segment* seg = &glyph->segments[i];
+                if (x >= seg->x && x < seg->x + seg->size &&
+                    y >= seg->y && y < seg->y + seg->size) {
+                    filled = true;
+                    break;
+                }
+            }
+            printf("%s", filled ? "██" : "  ");
+        }
+        printf("\n");
+    }
+    printf("Advance width: %d\n\n", glyph->advance_width);
+}
