@@ -55,6 +55,21 @@ int define_glyph_shape(Glyph* glyph) {
 			
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'C':
+			glyph_add_block(glyph, 1, 0);
+			glyph_add_block(glyph, 2, 0);;
+
+			glyph_add_block(glyph, 0, 1);
+
+			glyph_add_block(glyph, 0, 2);
+
+			glyph_add_block(glyph, 0, 3);
+
+			glyph_add_block(glyph, 1, 4);
+			glyph_add_block(glyph, 2, 4);
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		default:
 			return -1;
 	}

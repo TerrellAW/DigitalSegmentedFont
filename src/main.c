@@ -16,15 +16,19 @@ int main() {
 	Glyph test = glyph_create(' ');
 	Glyph test_A = glyph_create('A');
 	Glyph test_B = glyph_create('B');
+	Glyph test_C = glyph_create('C');
 	define_glyph_shape(&test);
 	define_glyph_shape(&test_A);
 	define_glyph_shape(&test_B);
+	define_glyph_shape(&test_C);
 	glyph_debug_print(&test);
 	glyph_debug_print(&test_A);
 	glyph_debug_print(&test_B);
+	glyph_debug_print(&test_C);
 	glyph_free(&test);
 	glyph_free(&test_A);
 	glyph_free(&test_B);
+	glyph_free(&test_C);
 
 	// TODO: Call and use functions from headers
 };
