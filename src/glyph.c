@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "../include/glyph.h"
+#include "../include/glyph_definitions.h"
 #include "../include/utils.h"
 
 // Allocate and initialize glyph
@@ -53,7 +54,7 @@ int compute_advance(Glyph* glyph) {
 			x_max = right_edge; // Set highest x coord to higher value
 		}
 	}
-	return x_max + 2; // Return with padding
+	return x_max + 3; // Return with padding
 }
 
 // Release memory used to create glyph
@@ -97,4 +98,49 @@ void glyph_debug_print(Glyph* glyph) {
         printf("\n");
     }
     printf("Advance width: %d\n\n", glyph->advance_width);
+}
+
+void glyph_debug_print_string(const char* str) {
+	printf("String \"%s\"\n\n", str);
+
+	int max_height = 0;
+	Glyph glyphs[256];
+	int glyph_count = 0;
+
+	for (int i = 0; str[i] != '\0'; i++) {
+		glyphs[glyph_count] = glyph_create(str[i]);
+		define_glyph_shape(&glyphs[glyph_count]);
+
+		for (size_t j = 0; j < glyphs[glyph_count].segment_count; j++) {
+			int bottom = glyphs[glyph_count].segments[j].y +
+						 glyphs[glyph_count].segments[j].size;
+			if (bottom > max_height) max_height = bottom;
+		}
+		glyph_count++;
+	}
+
+	for (int y = 0; y < max_height; y++) {
+		for (int g = 0; g < glyph_count; g++) {
+			Glyph* glyph = &glyphs[g];
+
+			for (int x = 0; x < glyph->advance_width; x++) {
+				bool filled = false;
+
+				for (size_t i = 0; i < glyph->segment_count; i++) {
+					Segment* seg = &glyph->segments[i];
+					if (x >= seg->x && x < seg->x + seg->size &&
+							y >= seg->y && y < seg->y + seg->size) {
+						filled = true;
+						break;
+					}
+				}
+				printf("%s", filled ? "██" : "  ");
+			}
+		}
+		printf("\n");
+	}
+	for (int i = 0; i < glyph_count; i++) {
+		glyph_free(&glyphs[i]);
+	}
+	printf("\n");
 }
