@@ -7,6 +7,13 @@ int define_glyph_shape(Glyph* glyph) {
 		case ' ':
 			glyph->advance_width = 13; // Advance to next char slot
 			break;
+		case ':':
+			glyph_add_block(glyph, 0, 1);
+
+			glyph_add_block(glyph, 0, 3);
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'A':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0);  // Left
