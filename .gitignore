@@ -4,3 +4,7 @@
 
 # Swap files
 *.swp
+
+# Debug files
+.vimspector.json
+launch.json
