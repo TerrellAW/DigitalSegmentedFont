@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "../include/utils.h"
 #include "../include/glyph.h"
 #include "../include/font.h"
@@ -52,13 +55,11 @@ int compute_descent(Glyph* glyphs, size_t count) {
 
 // Release memory used to create Font
 void font_free(Font* font) {
-	/* TODO: Adapt code for font
-	if (!glyphs) return; // Check if array exists
-	for (size_t i = 0; i < count; i++) { // Iterate through array of glyphs
-		glyph_free(&glyphs[i]); // Send memory address pointer to glyph_free()
+	if (!font) return; // Check if font exists
+	
+	for (size_t i = 0; i < font->glyph_count; i++) { // Iterate through glyphs
+		glyph_free(&font->glyphs[i]); // Free memory
 	}
-	free(glyphs); // Release memory holding array
-	glyphs = NULL;
-	*/
+	free(font); // Release memory holding font
+	font = NULL;
 }
-
