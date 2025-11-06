@@ -36,27 +36,28 @@ int define_glyph_shape(Glyph* glyph) {
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0);  // Left
 			glyph_add_block(glyph, 1, 0);  // Middle
-			glyph_add_block(glyph, 2, 0);  // Right
 			
 			// Row 1: Left stem and bulged right side
 			glyph_add_block(glyph, 0, 1);  // Left stem
-			glyph_add_block(glyph, 3, 1);  // Bulged right (x=12 pixels)
+			glyph_add_block(glyph, 2, 1);  // Bulged right (x=12 pixels)
 			
 			// Row 2: Horizontal bar (three segments)
 			glyph_add_block(glyph, 0, 2);  // Left
 			glyph_add_block(glyph, 1, 2);  // Middle
-			glyph_add_block(glyph, 2, 2);  // Right
 			
 			// Row 3: Left stem and bulged right side
 			glyph_add_block(glyph, 0, 3);  // Left stem
-			glyph_add_block(glyph, 3, 3);  // Bulged right (x=12 pixels)
+			glyph_add_block(glyph, 2, 3);  // Bulged right (x=12 pixels)
 			
 			// Row 4: Three segments across the bottom
 			glyph_add_block(glyph, 0, 4);  // Left
 			glyph_add_block(glyph, 1, 4);  // Middle
-			glyph_add_block(glyph, 2, 4);  // Right
 			
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		default:
+			return -1;
 	}
+
+	return 0;
 }
