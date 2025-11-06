@@ -102,4 +102,9 @@ void glyph_free(Glyph* glyph);
  */
 void glyph_debug_print(Glyph* glyph);
 
+/**
+ * @brief Prints output in the form of a string of characters to the terminal for debugging.
+ */
+void glyph_debug_print_string(const char* str);
+
 #endif // Closes GLYPH_H include guard
