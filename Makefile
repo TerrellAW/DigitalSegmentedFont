@@ -1,13 +1,13 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c17 -Iinclude
+CFLAGS = -g -Wall -Wextra -std=c17 -Iinclude
 
 # Output directories
 BIN_DIR = bin
 OBJ_DIR = build
 
 # Source files
-SRC = src/main.c src/font.c src/glyph.c src/writer.c src/utils.c src/glyph_definitions.c
+SRC = src/main.c src/font.c src/glyph.c src/writer.c src/utils.c src/glyph_definitions.c test/test.c
 
 # Object files
 OBJ = $(patsubst src/%.c,$(OBJ_DIR)/%.o,$(SRC))
@@ -24,7 +24,7 @@ $(BIN): $(OBJ)
 	$(CC) $(OBJ) -o $(BIN)
 
 # Compile each C file into an object file
-$(OBJ_DIR)/%.o: src/%.c
+$(OBJ_DIR)/%.o: src/%.c test/%.c
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
