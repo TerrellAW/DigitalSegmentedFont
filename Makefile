@@ -7,7 +7,7 @@ BIN_DIR = bin
 OBJ_DIR = build
 
 # Source files
-SRC = src/main.c src/font.c src/glyph.c src/writer.c src/utils.c
+SRC = src/main.c src/font.c src/glyph.c src/writer.c src/utils.c src/glyph_definitions.c
 
 # Object files
 OBJ = $(patsubst src/%.c,$(OBJ_DIR)/%.o,$(SRC))
