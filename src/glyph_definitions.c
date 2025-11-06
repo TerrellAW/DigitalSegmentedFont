@@ -5,7 +5,7 @@ int define_glyph_shape(Glyph* glyph) {
 	
 	switch(glyph->codepoint) {
 		case ' ':
-			glyph->advance_width = 8; // Advance to next char slot
+			glyph->advance_width = 12; // Advance to next char slot
 			break;
 		case 'A':
 			// Row 0: Three segments across the top
