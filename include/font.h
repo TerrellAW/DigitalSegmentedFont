@@ -76,11 +76,10 @@ int font_add_glyphs(Font* font, Glyph* glyph);
  * Iterates through all segments of all glyphs to find the highest
  * vertical extent above the baseline.
  *
- * @param glyphs Pointer to an array of Glyphs.
- * @param count Number of glyphs in the array.
+ * @param font Pointer to a Font struct.
  * @return The maximum ascent value, or -1 if glyphs is NULL.
  */
-int compute_ascent(Glyph* glyphs, size_t count); 
+int compute_ascent(Font* font); 
 
 /**
  * @brief Computes the maximum descent across all glyphs.
@@ -88,11 +87,10 @@ int compute_ascent(Glyph* glyphs, size_t count);
  * Iterates through all segments of all glyphs to find the lowest
  * vertical extent below the baseline.
  *
- * @param glyphs Pointer to an array of Glyphs.
- * @param count Number of glyphs in the array.
+ * @param font Pointer to a Font struct.
  * @return The maximum descent value, or -1 if glyphs is NULL.
  */
-int compute_descent(Glyph* glyphs, size_t count); 
+int compute_descent(Font* font); 
 
 /**
  * @brief Frees all memory associated with a Font.
