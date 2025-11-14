@@ -7,10 +7,11 @@ BIN_DIR = bin
 OBJ_DIR = build
 
 # Source files
+SRC_DIR = src test
 SRC = src/main.c src/font.c src/glyph.c src/writer.c src/utils.c src/glyph_definitions.c test/test.c
 
 # Object files
-OBJ = $(patsubst src/%.c,$(OBJ_DIR)/%.o,$(SRC))
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 # Output binary
 BIN = $(BIN_DIR)/digital-segmented-fontgen
