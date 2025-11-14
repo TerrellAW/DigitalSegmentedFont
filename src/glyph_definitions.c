@@ -43,7 +43,6 @@ int define_glyph_shape(Glyph* glyph) {
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0);  // Left
 			glyph_add_block(glyph, 1, 0);  // Middle
-			glyph_add_block(glyph, 2, 0);
 			
 			// Row 1: Left stem and bulged right side
 			glyph_add_block(glyph, 0, 1);  // Left stem
@@ -60,12 +59,10 @@ int define_glyph_shape(Glyph* glyph) {
 			// Row 4: Three segments across the bottom
 			glyph_add_block(glyph, 0, 4);  // Left
 			glyph_add_block(glyph, 1, 4);  // Middle
-			glyph_add_block(glyph, 2, 4);
 			
 			glyph->advance_width = compute_advance(glyph);
 			break;
 		case 'C':
-			glyph_add_block(glyph, 0, 0);
 			glyph_add_block(glyph, 1, 0);
 			glyph_add_block(glyph, 2, 0);
 
@@ -75,7 +72,6 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph_add_block(glyph, 0, 3);
 
-			glyph_add_block(glyph, 0, 4);
 			glyph_add_block(glyph, 1, 4);
 			glyph_add_block(glyph, 2, 4);
 
