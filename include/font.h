@@ -68,7 +68,7 @@ Glyph* glyphs_create(size_t* out_count);
  * @param glyph Pointer to the first element of the Glyph array to add.
  * @return 0 on success, -1 if font or glyph is NULL.
  */
-int font_add_glyphs(Font* font, Glyph* glyph); 
+int font_add_glyphs(Font* font, Glyph* glyphs); 
 
 /**
  * @brief Computes the maximum ascent across all glyphs.
