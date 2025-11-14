@@ -22,7 +22,7 @@ int test() {
     printf("Freed successfully\n");
     
     printf("\nTest 6: Try string function\n");
-    glyph_debug_print_string("A: BC");
+    glyph_debug_print_string("A:B C");
 	
 	return 0;
 }
