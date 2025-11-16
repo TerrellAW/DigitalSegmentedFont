@@ -54,7 +54,7 @@ int compute_advance(Glyph* glyph) {
 			x_max = right_edge; // Set highest x coord to higher value
 		}
 	}
-	return x_max + 3; // Return with padding
+	return x_max + 4; // Return with padding
 }
 
 // Release memory used to create glyph
