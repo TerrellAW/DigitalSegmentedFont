@@ -3,7 +3,7 @@
 int test() {
 	// Debug test ouput
 	printf("Test 1: Create single glyph\n");
-    Glyph g = glyph_create('O');
+    Glyph g = glyph_create('A');
     printf("Created glyph with codepoint: %c\n", g.codepoint);
     
     printf("Test 2: Define glyph shape\n");
@@ -22,7 +22,7 @@ int test() {
     printf("Freed successfully\n");
     
     printf("\nTest 6: Try string function\n");
-    glyph_debug_print_string("3:41");
+    glyph_debug_print_string("TEST");
 	
 	return 0;
 }
