@@ -34,7 +34,7 @@ Glyph* glyphs_create(size_t* out_count) {
 
 	// Initialize each glyph
 	for (size_t i = 0; i < count; i++) {
-		uint32_t codepoint = start + 1;
+		uint32_t codepoint = start + i;
 		glyphs[i] = glyph_create(codepoint);
 	}
 
