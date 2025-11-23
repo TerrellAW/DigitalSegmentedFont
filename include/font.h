@@ -35,6 +35,7 @@ typedef struct {
  * - name set to "DigitalSegmented"
  * - em_size set to 1000
  * - glyphs set to NULL
+ * - glyph_count set to 0
  * - ascent and descent set to 0
  *
  * @return A Font struct with initialized fields.
@@ -66,9 +67,10 @@ Glyph* glyphs_create(size_t* out_count);
  *
  * @param font Pointer to the Font to modify.
  * @param glyph Pointer to the first element of the Glyph array to add.
+ * @param glyph_count Number of glyphs in the array.
  * @return 0 on success, -1 if font or glyph is NULL.
  */
-int font_add_glyphs(Font* font, Glyph* glyphs); 
+int font_add_glyphs(Font* font, Glyph* glyphs, size_t glyph_count); 
 
 /**
  * @brief Computes the maximum ascent across all glyphs.

@@ -42,11 +42,11 @@ Glyph* glyphs_create(size_t* out_count) {
 }
 
 // Add glyph to font
-int font_add_glyphs(Font* font, Glyph* glyphs) {
-	// TODO: Somehow get a count and loop
+int font_add_glyphs(Font* font, Glyph* glyphs, size_t glyph_count) {
 	if (!font || !glyphs) return -1;
 
 	font->glyphs = glyphs;
+	font->glyph_count = glyph_count;
 	font->ascent = compute_ascent(font);
 	font->descent = compute_descent(font);
 
