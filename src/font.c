@@ -88,6 +88,12 @@ void font_free(Font* font) {
 	for (size_t i = 0; i < font->glyph_count; i++) { // Iterate through glyphs
 		glyph_free(&font->glyphs[i]); // Free memory
 	}
-	free(font); // Release memory holding font
-	font = NULL;
+
+	free(font->glyphs); // Free glyphs array
+	
+	// Reset fields
+	font->glyphs = NULL;
+	font->glyph_count = 0;
+	font->ascent = 0;
+	font->descent = 0;
 }
