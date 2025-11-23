@@ -23,10 +23,19 @@ Font font_create() {
 // Create array of Glyph structs
 Glyph* glyphs_create(size_t* out_count) {
 	// Define range of Unicode codepoints
-	const uint32_t start = 0x20; // Space
-	const uint32_t end	 = 0x7E; // Tilde
+	// const uint32_t start = 0x20; // Space
+	// const uint32_t end	 = 0x7E; // Tilde
+	// size_t count = end - start + 1; // Adding 1 ensures inclusive
+	
+	// Define only the 37 supported characters
+	const uint32_t codepoints[] = {
+		' ', ':',
+		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+	};
 
-	size_t count = end - start + 1; // Adding 1 ensures inclusive
+	size_t count = sizeof(codepoints) / sizeof(codepoints[0]); // Get amount of elements in array
 	if (out_count) *out_count = count; // Optional external pointer
 
 	// Allocate memory for glyph array
@@ -34,8 +43,8 @@ Glyph* glyphs_create(size_t* out_count) {
 
 	// Initialize each glyph
 	for (size_t i = 0; i < count; i++) {
-		uint32_t codepoint = start + i;
-		glyphs[i] = glyph_create(codepoint);
+		// uint32_t codepoint = start + i;
+		glyphs[i] = glyph_create(codepoints[i]);
 	}
 
 	return glyphs;
