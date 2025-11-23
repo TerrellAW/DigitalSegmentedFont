@@ -14,6 +14,9 @@
 
 int main() {
 	// TODO: Call and use functions from headers
+	// size_t count;
+	// Glyph* glyphs = glyphs_create(&count);
+	// font_add_glyphs(&font, glyphs, count);
     
 	return test();
 };
