@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
@@ -70,14 +71,24 @@ void write_head_table(FILE* out, Font* font) {
 	write_int16(out, 0);
 }
 
+bool is_valid(const char* filepath) {
+	// TODO: validate filepath with regex
+	return false;
+}
+
 int write_ttf(Font* font, const char* filepath) {
-	// TODO: Validate input and use write functions
-	
 	// If file path is null, throw error
 	if (!filepath) {
-		fprintf(stderr, "Write failed: ouput file %s does not exist", filepath); // Print error to error stream
+		fprintf(stderr, "Write failed: ouput path %s does not exist", filepath); // Print error to error stream
 		return 1; // Error code
 	}
+	// If filepath is invalid, throw error
+	if (!is_valid(filepath)) {
+		fprintf(stderr, "Write failed: output path %s is invalid", filepath); // Print error to error stream
+		return 1; // Error code
+	}
+
+	// TODO: Use write functions
 
 	return 1;
 }
