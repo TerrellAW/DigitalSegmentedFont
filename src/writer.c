@@ -72,5 +72,12 @@ void write_head_table(FILE* out, Font* font) {
 
 int write_ttf(Font* font, const char* filepath) {
 	// TODO: Validate input and use write functions
+	
+	// If file path is null, throw error
+	if (!filepath) {
+		fprintf(stderr, "Write failed: ouput file %s does not exist", filepath); // Print error to error stream
+		return 1; // Error code
+	}
+
 	return 1;
 }
