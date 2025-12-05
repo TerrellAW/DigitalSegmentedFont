@@ -38,7 +38,7 @@ Bitmap fonts like this one are not always supported by default, on Debian based 
 sudo rm /etc/fonts/conf.d/70-no-bitmaps*
 sudo fc-cache -fv
 ```
-If that does not work, you can do this:
+If that does not work, you should also do this:
 ``` bash
 sudo ln -s /usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
 sudo fc-cache -fv
