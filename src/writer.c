@@ -128,7 +128,7 @@ int write_bdf(Font* font, const char* filepath) {
     printf("  sudo cp %s.pcf.gz /usr/share/fonts/misc/\n", font->name);
     printf("  sudo mkfontdir /usr/share/fonts/misc\n");
     printf("  fc-cache -fv\n");
-	printf("  fc-list | grep DigitalSegmented # Verify installation\n");
+	printf("  fc-list | grep %s # Verify installation\n", font->name);
     
     return 0;
 }
