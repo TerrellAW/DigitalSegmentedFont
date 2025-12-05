@@ -70,9 +70,11 @@ int write_bdf(Font* font, const char* filepath) {
             font->name, total_height, max_width * 10);
     fprintf(out, "SIZE %d 75 75\n", total_height);
     fprintf(out, "FONTBOUNDINGBOX %d %d 0 %d\n", max_width, total_height, -font->descent);
-    fprintf(out, "STARTPROPERTIES 2\n");
+    fprintf(out, "STARTPROPERTIES 4\n");
     fprintf(out, "FONT_ASCENT %d\n", font->ascent);
     fprintf(out, "FONT_DESCENT %d\n", font->descent);
+	fprintf(out, "CHARSET_REGISTRY \"ISO10646\"\n");
+	fprintf(out, "CHARSET_ENCODING \"1\"\n");
     fprintf(out, "ENDPROPERTIES\n");
     fprintf(out, "CHARS %zu\n\n", font->glyph_count);
     
@@ -105,8 +107,8 @@ int write_bdf(Font* font, const char* filepath) {
         rasterize_glyph(g, total_height, glyph_width, bitmap);
         
         // Output bitmap rows from top to bottom
-        char hex_row[256];
-        for (int y = total_height - 1; y >= 0; y--) {
+        char hex_row[(max_width / 8 * 2) + 1];
+        for (int y = 0; y < total_height; y++) {
             bitmap_row_to_hex(&bitmap[y * glyph_width], glyph_width, hex_row);
             fprintf(out, "%s\n", hex_row);
         }
