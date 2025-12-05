@@ -312,7 +312,60 @@ int define_glyph_shape(Glyph* glyph) {
 			
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'a':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+			
+			// Row 1: Left and right sides
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+			
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+			
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3);  // Left
+			glyph_add_block(glyph, 3, 3);  // Right
+			
+			// Row 4: Left and right sides (bottom)
+			glyph_add_block(glyph, 0, 4);  // Left
+			glyph_add_block(glyph, 3, 4);  // Right
+			
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'B':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle
+			glyph_add_block(glyph, 2, 0); // Right
+			
+			// Row 1: Left stem and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+			
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle
+			glyph_add_block(glyph, 2, 2); // Right
+			
+			// Row 3: Left stem and bulged right side
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+			
+			// Row 4: Segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle
+			glyph_add_block(glyph, 2, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'b':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle
@@ -362,7 +415,56 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'c':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: One segment
+			glyph_add_block(glyph, 0, 2); // Left
+
+			// Row 3: One segment
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: Segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'D':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle
+			glyph_add_block(glyph, 2, 0); // Right
+
+			// Row 1: Left and right sides
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Left and right sides
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Three segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle
+			glyph_add_block(glyph, 2, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'd':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle
@@ -414,6 +516,33 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'e':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left side
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left side
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'F':
 			// Row 0: Four segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
@@ -438,7 +567,58 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'f':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left side
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left side
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: Left side
+			glyph_add_block(glyph, 0, 4); // Left
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'G':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left side
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: Left and right hook
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'g':
 			// Row 0: Four segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle Left
@@ -490,6 +670,31 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'h':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'I':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
@@ -512,7 +717,52 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'i':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle
+			glyph_add_block(glyph, 2, 0); // Right
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 1, 1); // Middle
+			
+			// Row 2: One segment
+			glyph_add_block(glyph, 1, 2); // Middle
+			
+			// Row 3: One segment
+			glyph_add_block(glyph, 1, 3); // Middle
+
+			// Row 4: Three segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle
+			glyph_add_block(glyph, 2, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'J':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 1, 0); // Left
+			glyph_add_block(glyph, 2, 0); // Middle
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 2, 1); // Middle
+			
+			// Row 2: One segment
+			glyph_add_block(glyph, 2, 2); // Middle
+			
+			// Row 3: One segment
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 2, 3); // Middle
+
+			// Row 4: Three segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle
+			glyph_add_block(glyph, 2, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'j':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 1, 0); // Left
 			glyph_add_block(glyph, 2, 0); // Middle
@@ -558,6 +808,29 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'k':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 2, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 2, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'L':
 			// Row 0: One segment
 			glyph_add_block(glyph, 0, 0); // Left
@@ -579,7 +852,55 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'l':
+			// Row 0: One segment
+			glyph_add_block(glyph, 0, 0); // Left
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: One segment
+			glyph_add_block(glyph, 0, 2); // Left
+
+			// Row 3: One segment
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'M':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 1, 1); // Middle Left
+			glyph_add_block(glyph, 2, 1); // Middle Right
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'm':
 			// Row 0: Left and right sides
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 3, 0); // Right
@@ -633,7 +954,61 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'n':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 1, 1); // Middle Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 2, 3); // Middle Right
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'O':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right sides and top of bar
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Left and right sides
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 3, 2); // Right
+			
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Three segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+			
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'o':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle Left
@@ -685,7 +1060,63 @@ int define_glyph_shape(Glyph* glyph) {
 			
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'p':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right sides and top of bar
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+			
+			// Row 3: One segment
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: One segment
+			glyph_add_block(glyph, 0, 4); // Left
+			
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'Q':
+			// Row 0: Three segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right sides and top of bar
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Left and right sides
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 3, 2); // Right
+			
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 2, 3); // Middle Right
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Three segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			// Descent: One segment
+			glyph_add_block(glyph, 2, 5); // Middle Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'q':
 			// Row 0: Three segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle Left
@@ -743,7 +1174,61 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'r':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 2, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'S':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 0, 1); // Left
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+			
+			// Row 3: One segment
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 's':
 			// Row 0: Four segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle Left
@@ -791,7 +1276,53 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 't':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: One segment
+			glyph_add_block(glyph, 1, 1); // Middle
+			
+			// Row 2: One segment
+			glyph_add_block(glyph, 1, 2); // Middle
+			
+			// Row 3: One segment
+			glyph_add_block(glyph, 1, 3); // Middle
+
+			// Row 4: One segment
+			glyph_add_block(glyph, 1, 4); // Middle
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'U':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Left and right side
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'u':
 			// Row 0: Left and right sides
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 3, 0); // Right
@@ -838,7 +1369,56 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'v':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Left and right side
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Two segments
+			glyph_add_block(glyph, 1, 3); // Middle Left
+			glyph_add_block(glyph, 2, 3); // Middle Right
+
+			// Row 4: One segment
+			glyph_add_block(glyph, 1, 4); // Middle Left
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'W':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 2: Left and right sides
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 0, 2); // Left
+			glyph_add_block(glyph, 1, 2); // Middle Left
+			glyph_add_block(glyph, 2, 2); // Middle Right
+			glyph_add_block(glyph, 3, 2); // Right
+
+			// Row 3: Horizontal bar
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 1, 3); // Middle Left
+			glyph_add_block(glyph, 2, 3); // Middle Right
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'w':
 			// Row 0: Left and right sides
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 3, 0); // Right
@@ -888,6 +1468,29 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'x':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 1, 2); // Left
+			glyph_add_block(glyph, 2, 2); // Right
+
+			// Row 3: Left and right sides
+			glyph_add_block(glyph, 0, 3); // Left
+			glyph_add_block(glyph, 3, 3); // Right
+
+			// Row 4: Left and right sides
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'Y':
 			// Row 0: Left and right sides
 			glyph_add_block(glyph, 0, 0); // Left
@@ -909,7 +1512,53 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case 'y':
+			// Row 0: Left and right sides
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Left and right side
+			glyph_add_block(glyph, 0, 1); // Left
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 1, 2); // Left
+			glyph_add_block(glyph, 2, 2); // Right
+
+			// Row 3: One segment
+			glyph_add_block(glyph, 1, 3); // Middle Left
+
+			// Row 4: One segment
+			glyph_add_block(glyph, 1, 4); // Middle Left
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case 'Z':
+			// Row 0: Four segments across the top
+			glyph_add_block(glyph, 0, 0); // Left
+			glyph_add_block(glyph, 1, 0); // Middle Left
+			glyph_add_block(glyph, 2, 0); // Middle Right
+			glyph_add_block(glyph, 3, 0); // Right
+
+			// Row 1: Right side
+			glyph_add_block(glyph, 3, 1); // Right
+
+			// Row 2: Horizontal bar
+			glyph_add_block(glyph, 1, 2); // Left
+			glyph_add_block(glyph, 2, 2); // Right
+
+			// Row 3: Left side
+			glyph_add_block(glyph, 0, 3); // Left
+
+			// Row 4: Four segments across the bottom
+			glyph_add_block(glyph, 0, 4); // Left
+			glyph_add_block(glyph, 1, 4); // Middle Left
+			glyph_add_block(glyph, 2, 4); // Middle Right
+			glyph_add_block(glyph, 3, 4); // Right
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
+		case 'z':
 			// Row 0: Four segments across the top
 			glyph_add_block(glyph, 0, 0); // Left
 			glyph_add_block(glyph, 1, 0); // Middle Left
