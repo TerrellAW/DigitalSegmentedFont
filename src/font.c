@@ -27,7 +27,7 @@ Glyph* glyphs_create(size_t* out_count) {
 	// const uint32_t end	 = 0x7E; // Tilde
 	// size_t count = end - start + 1; // Adding 1 ensures inclusive
 	
-	// Define only the 37 supported characters
+	// Define only the 66 supported characters
 	const uint32_t codepoints[] = {
 		' ', ':', '.', '-',
 		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

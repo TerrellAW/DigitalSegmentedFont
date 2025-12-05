@@ -45,8 +45,8 @@ Font font_create();
 /**
  * @brief Creates a dynamically allocated array of Glyph structs for a fixed Unicode range.
  *
- * Initializes one Glyph for each Unicode codepoint in the printable ASCII range (0x20 to 0x7E),
- * using glyph_create(). The resulting array contains 95 glyphs, each with its codepoint set.
+ * Initializes one Glyph for each Unicode codepoint specified using glyph_create(). 
+ * The resulting array contains 66 glyphs, each with its codepoint set.
  *
  * If the caller provides a non-NULL pointer to out_count, the total number of glyphs created
  * will be written to that location.
@@ -78,6 +78,8 @@ int font_add_glyphs(Font* font, Glyph* glyphs, size_t glyph_count);
  * Iterates through all segments of all glyphs to find the highest
  * vertical extent above the baseline.
  *
+ * Uses BASELINE as a constant to calculate ascent.
+ *
  * @param font Pointer to a Font struct.
  * @return The maximum ascent value, or -1 if glyphs is NULL.
  */
@@ -88,6 +90,8 @@ int compute_ascent(Font* font);
  *
  * Iterates through all segments of all glyphs to find the lowest
  * vertical extent below the baseline.
+ *
+ * Uses BASELINE as a constant to calculate descent.
  *
  * @param font Pointer to a Font struct.
  * @return The maximum descent value, or -1 if glyphs is NULL.
