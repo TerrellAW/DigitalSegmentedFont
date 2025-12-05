@@ -29,10 +29,12 @@ Glyph* glyphs_create(size_t* out_count) {
 	
 	// Define only the 37 supported characters
 	const uint32_t codepoints[] = {
-		' ', ':',
+		' ', ':', '.', '-',
 		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+		'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 	};
 
 	size_t count = sizeof(codepoints) / sizeof(codepoints[0]); // Get amount of elements in array
