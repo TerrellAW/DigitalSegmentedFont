@@ -16,6 +16,12 @@ int define_glyph_shape(Glyph* glyph) {
 
 			glyph->advance_width = compute_advance(glyph);
 			break;
+		case '.':
+			// Row 3: One segment
+			glyph_add_block(glyph, 0, 3);
+
+			glyph->advance_width = compute_advance(glyph);
+			break;
 		case '-':
 			// Row 2: Horizontal bar
 			glyph_add_block(glyph, 0, 2); // Left
