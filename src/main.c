@@ -60,12 +60,12 @@ int main(int argc, char* argv[]) {
 
 	// Write BDF file
 	printf("\nWriting BDF file...\n");
-	if (write_bdf(&font, "bin/DigitalSegmented.bdf") ==0) {
-		printf("\nSuccess! Font file created: bin/DigitalSegmented.bdf\n");
+	if (write_bdf(&font, "DigitalSegmented.bdf") ==0) {
+		printf("\nSuccess! Font file created: DigitalSegmented.bdf\n");
 		printf("\nTo install and use:\n");
-		printf("    1. bdftopcf bin/DigitalSegmented.bdf -o bin/DigitalSegmented.pcf\n");
-		printf("    2. gzip bin/DigitalSegmented.pcf\n");
-		printf("    3. sudo cp bin/DigitalSegmented.pcf.gz /usr/share/fonts/misc/\n");
+		printf("    1. bdftopcf DigitalSegmented.bdf -o DigitalSegmented.pcf\n");
+		printf("    2. gzip DigitalSegmented.pcf\n");
+		printf("    3. sudo cp DigitalSegmented.pcf.gz /usr/share/fonts/misc/\n");
 		printf("    4. sudo mkfontdir /usr/share/fonts/misc/\n");
 		printf("    5. fc-cache -fv\n");
 		printf("    6. fc-list | grep DigitalSegmented # Verify installation\n");
