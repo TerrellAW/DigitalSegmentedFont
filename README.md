@@ -28,7 +28,7 @@ Right now this generator only accepts one argument, or no arguments.
 
 Default: Generates a bdf file in the same directory as the program.
 
-The program will output instructions on what to do next with this file, however there is an easier way if you're using KDE Plasma. After using bdftopcf and gzip to convert the bdf font file into a pcf.gz, you can right-click it and push install and the system will do it for you.
+The program will output instructions on what to do next with this file, however there is an easier way if you're using KDE Plasma. After using bdftopcf and gzip to convert the bdf font file into a pcf.gz, you can right-click it and push install and the system will do it for you. Try this out on other desktop environments, it may be possible!
 
 After following these steps, the font should appear in your appearance settings and when you use the `fc-list` command.
 
