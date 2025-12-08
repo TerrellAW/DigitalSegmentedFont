@@ -49,4 +49,4 @@ If that does not work, you should also do this:
 sudo ln -s /usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
 sudo fc-cache -fv
 ```
-In modern Windows and MacOS there is no way to natively render bitmap fonts. You will have to use a third-party program like Gimp or open an XWindow session via WSL on Windows.
+In modern Windows and MacOS there is no way to natively render bitmap fonts. You will have to use a third-party program like Gimp or open an XWindow session via WSL on Windows. If you'd like you can try converting this generator's output into a TTF or OTF for cross-platform compatibility. Such a contribution would be appreciated.
