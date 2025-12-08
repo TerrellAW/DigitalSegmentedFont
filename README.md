@@ -21,6 +21,12 @@ pacman -Sy gcc
 
 Its easy enough to find the install instructions for any other package managers online. During compilation GCC may ask you to install other dependencies. This program only uses the C standard library, so it shouldn't need much.
 
+## Build
+After cloning this repository you will need to build it using the `make` command.
+All Unix systems come with `make`, whether its Linux, BSD, MacOS or WSL. To compile this program from a Unix terminal:
+1. Enter the program directory, ie. `cd ./DigitalSegmentedFont`
+2. Build with `make`
+
 ## Usage
 Right now this generator only accepts one argument, or no arguments.
 
@@ -32,7 +38,7 @@ The program will output instructions on what to do next with this file, however 
 
 After following these steps, the font should appear in your appearance settings and when you use the `fc-list` command.
 
-### Note
+### Notes
 Bitmap fonts like this one are not always supported by default, on Debian based systems you will need to:
 ``` bash
 sudo rm /etc/fonts/conf.d/70-no-bitmaps*
@@ -43,4 +49,4 @@ If that does not work, you should also do this:
 sudo ln -s /usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
 sudo fc-cache -fv
 ```
-
+In modern Windows and MacOS there is no way to natively render bitmap fonts. You will have to use a third-party program like Gimp or open an XWindow session via WSL on Windows.
