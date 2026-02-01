@@ -1,4 +1,7 @@
-# DigitalSegmented Font Generator
+<p align="center">
+  <img width="405" height="33" alt="Digital Segmented Font" src="https://github.com/user-attachments/assets/113cf7f0-adec-4f8b-a07d-030526d7277f" />  
+</p>
+
 This font generator was created to bring my vision of a blocky digital font to life, for the sole purpose further customizing my Linux setup. You can see it in action [here](https://github.com/TerrellAW/blackglass-sddm-Qt5).
 
 To compile and run this program it'll be necessary to have the [GNU Compiler Collection](https://gcc.gnu.org/) installed, or to reconfigure the Makefile to use your preferred compiler suite.
