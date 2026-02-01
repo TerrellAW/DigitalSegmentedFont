@@ -33,7 +33,7 @@ All Unix systems come with `make`, whether its Linux, BSD, MacOS or WSL. To comp
 ## Usage
 Right now this generator only accepts one argument, or no arguments.
 
-`-t` Runs in test mode, program will output glyphs and debug text
+`-t` Runs in test mode, program will output glyphs and debug text.
 
 Default: Generates a bdf file in the same directory as the program.
 
